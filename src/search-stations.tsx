@@ -1,8 +1,8 @@
 import { ActionPanel, List, Action, Icon } from "@raycast/api";
 import { useFetch, useLocalStorage } from "@raycast/utils";
+import { useState } from "react";
 
 import { MVG_API_URL } from "./config";
-import { useState } from "react";
 import { Station } from "./mvg";
 import UpcomingDepartures from "./upcoming-depatures";
 
@@ -41,7 +41,7 @@ export default function Command() {
 
   return (
     <List isLoading={isLoading} searchText={searchText} onSearchTextChange={setSearchText} throttle>
-      {/* 📌 Pinned Stations Section */}
+      {/* Pinned Stations Section */}
       {pinnedStations.length > 0 && (
         <List.Section title="Pinned">
           {pinnedStations.map((station) => (
@@ -64,7 +64,7 @@ export default function Command() {
         </List.Section>
       )}
 
-      {/* 🔍 Search Results Section */}
+      {/* Search Results Section */}
       {shouldSearch && searchedStations.length > 0 && (
         <List.Section title="Search...">
           {searchedStations.map((station) => (
